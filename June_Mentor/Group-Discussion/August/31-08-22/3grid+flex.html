@@ -1,0 +1,188 @@
+<html>
+
+<head>
+    <style>
+
+        *{
+            margin:0;
+            padding:0;
+        }
+
+        ul {
+            list-style-type: none;
+            background-color: #0000ff9e;
+            height: 100px;
+
+        }
+
+        li {
+            display: inline-block;
+            margin-top: 30px;
+            margin-left: 80px;
+            font-size: 25px;
+            font-weight: 800;
+            color: white;
+
+        }
+
+        .button-float {
+            float: right;
+
+        }
+
+        button {
+            width: 115px;
+            height: 41px;
+            border: 4px solid white;
+            border-radius: 11px;
+            font-size: 14px;
+            color: white;
+            background-color: #00b4ff;
+        }
+
+        .login {
+            margin-right: 20px;
+        }
+
+        .link-box {
+            /* box-shadow: 4px 4px 2px 1px white; */
+            width: 100px;
+            height: 42px;
+            text-align: center;
+            font-family: "system-ui";
+        }
+
+        .image-logo {
+            background-image: url('./logo.jpg');
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        .pointer {
+            cursor: pointer;
+        }
+
+        .box {
+            background-color: green;
+            width: 200px;
+            height: 100px;
+            margin: 10px;
+        }
+
+        .container-flex {
+            display: flex;
+            flex-wrap: wrap;
+                justify-content: center;
+        }
+
+        .header {
+            grid-area: header;
+        }
+
+        .footer {
+            grid-area: footer;
+        }
+
+        .side-menu {
+            grid-area: side-menu;
+        }
+
+        .main-content {
+            grid-area: main-content;
+        }
+
+        .container {
+            display: grid;
+            grid-template-areas: 'header header header'
+                'side-menu main-content main-content'
+                'footer footer footer';
+            gap: 50px;
+        }
+
+        .header,
+        .footer {
+            height: 100px;
+            background-color: #00b4ff;
+        }
+
+        .side-menu {
+            width: 300px;
+            height: 400px;
+            background-color: green;
+        }
+
+        .main-content {
+            min-height: 400px;
+            background-color: orange;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+ <ul>
+        <li class="link-box image-logo">Logo</li>
+        <li class="link-box pointer">About</li>
+        <li class="link-box pointer">Contact</li>
+        <li class="link-box pointer">Service</li>
+        <li class="link-box pointer">Help</li>
+        <li class="button-float login pointer"><button class="pointer"><a href="login.html">Login</a></button></li>
+        <li class="button-float pointer"><button class="pointer">Register</button></li>
+    </ul>
+        </div>
+        <div class="side-menu">
+
+        </div>
+        <div class="main-content">
+            <div class="container-flex">
+                <div class="box">
+    
+                </div>
+                <div class="box">
+    
+                </div>
+                <div class="box">
+    
+                </div>
+                <div class="box">
+    
+                </div>
+                <div class="box">
+    
+                </div>
+                <div class="box">
+    
+                </div>
+                <div class="box">
+    
+                </div>
+                <div class="box">
+    
+                </div>
+                <div class="box">
+    
+                </div>
+                <div class="box">
+    
+                </div>
+                <div class="box">
+    
+                </div>
+                <div class="box">
+    
+                </div>
+                <div class="box">
+    
+                </div>
+            </div>
+        </div>
+        <div class="footer">
+
+        </div>
+    </div>
+
+</body>
+
+</html>

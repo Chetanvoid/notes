@@ -1,0 +1,21 @@
+<script>
+// https://my.newtonschool.co/playground/code/2hsfqo5bu8dw/
+
+// Problem Statement
+// An array of 5 string is given where each string contains 2 characters, Now you have to sort these strings, like in a dictionary.
+
+// Input
+function easySorting(arr){
+    let result =[];
+    for(let i=0;i<arr.length;i++){
+         result.push(arr[i].toLowerCase());
+    }
+    result.sort();
+    for(let i=0;i<arr.length;i++){
+         result[i]=result[i].toUpperCase();
+    }
+       return result;
+  }
+  console.log(easySorting(["AS","KF","ER","DD"," JK"]));
+</script>
+

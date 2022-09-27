@@ -1,0 +1,161 @@
+<script>
+    // https://my.newtonschool.co/playground/markup/toxdm2ltx2y6/
+</script>
+<html>
+
+<head>
+
+</head>
+
+<body>
+    <div id="main">
+
+    </div>
+    <script>
+
+        let counter = 0;
+        let inputOne = "";
+        let inputTwo = "";
+        let duplicateIdentifierOne ="";
+        let duplicateIdentifierTwo="";
+        let global = document.getElementById("main");
+        function creatingInitialImages() {
+            let list = [];
+            let flag = true;
+            while (flag) {
+                let random = Math.ceil(Math.random() * 6);
+                let result = list.indexOf(random);
+                if (result == -1) {
+                    list.push(random);
+                }
+                if (list.length == 6) {
+                    flag = false;
+                }
+            }
+            let global = document.getElementById("main");
+            let randomImage = Math.ceil(Math.random() * 5);
+            console.log(randomImage);
+            for (let i = 0; i < list.length; i++) {
+                console.log(list[i]);
+                if (list[i] == 6) {
+                    let image = document.createElement("img");
+                    image.src = `${randomImage}.png`;
+                    image.id=i;
+                    image.addEventListener('click', addImageHandler);
+                    image.setAttribute('data-ns-test', `img${randomImage}`);
+                    image.style.width = "200px";
+                    image.style.height = "200px";
+                    image.style.margin = "10px";
+                    global.appendChild(image);
+                    continue;
+                }
+                let image = document.createElement("img");
+                image.src = `${list[i]}.png`;
+                image.id=i;
+                image.addEventListener('click', addImageHandler);
+                image.setAttribute('data-ns-test', `img${list[i]}`);
+                image.style.width = "200px";
+                image.style.height = "200px";
+                image.style.margin = "10px";
+                global.appendChild(image);
+            }
+
+        }
+
+        function initialLoad() {
+            let heading = document.createElement("h3");
+            heading.innerHTML = "Please click on the identical tiles to verify that you are not a robot";
+            heading.style.textAlign = "center";
+            global.appendChild(heading);
+        }
+
+        function addImageHandler(event) {
+            counter++;
+            if (counter == 1) {
+                createResetButton();
+                inputOne = event.target.getAttribute("data-ns-test");
+                duplicateIdentifierOne = event.target.id;
+                console.log(inputOne);
+            }
+            if (counter == 2) {
+                inputTwo = event.target.getAttribute("data-ns-test");
+                console.log(inputTwo);
+                duplicateIdentifierTwo = event.target.id;
+                if(duplicateIdentifierOne!="" && duplicateIdentifierTwo !="" && duplicateIdentifierOne == duplicateIdentifierTwo){
+                      
+                }
+                else{
+                    createVerifyButton();
+                }
+            }
+            if (counter == 3) {
+                clearVerifyButton();
+            }
+        }
+
+        function createResetButton() {
+            let reset = document.createElement("button");
+            reset.id = "reset";
+            reset.addEventListener("click", clearResetButtonHandler);
+            reset.innerHTML = "Reset";
+            reset.style.display = "block";
+            reset.style.margin = "10px auto";
+            global.appendChild(reset);
+        }
+
+        function createVerifyButton() {
+            let verify = document.createElement("button");
+            verify.id = "btn";
+            verify.addEventListener("click", verifyButtonSubmitHandler);
+            verify.innerHTML = "Verify";
+            verify.style.display = "block";
+            verify.style.margin = "10px auto";
+            global.appendChild(verify);
+        }
+
+        function clearResetButtonHandler() {
+            counter = 0;
+            inputOne = "";
+            inputTwo = "";
+            duplicateIdentifierOne="";
+            duplicateIdentifierTwo="";
+            document.getElementById("reset").remove();
+            if (document.getElementById("btn")) {
+                document.getElementById("btn").remove();
+            }
+            if (document.getElementById("para")) {
+                document.getElementById("para").remove();
+            }
+        }
+
+        function verifyButtonSubmitHandler() {
+            if (document.getElementById("para")) {
+                return;
+            }
+            let para = document.createElement("p");
+            para.id = "para";
+            para.style.textAlign = "center";
+            if (inputOne != "" && inputTwo != "" && (inputOne == inputTwo)) {
+                para.innerHTML = "You are a human. Congratulations!."
+            }
+            else {
+                para.innerHTML = "We can't verify you as a human. You selected the non-identical tiles.";
+            }
+            global.appendChild(para);
+        }
+
+        function clearVerifyButton() {
+            document.getElementById("btn").remove();
+            inputOne = "";
+            inputTwo = "";
+            duplicateIdentifierOne="";
+            duplicateIdentifierTwo="";
+        }
+
+        creatingInitialImages();
+        initialLoad();
+
+    </script>
+</body>
+
+</html>

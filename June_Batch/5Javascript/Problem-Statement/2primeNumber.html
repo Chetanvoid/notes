@@ -1,0 +1,28 @@
+<script>
+      //https://my.newtonschool.co/playground/code/bfjy1iqa4upo/
+    
+    //Problem Statement
+    //Given a number n find the number of prime numbers less than equal to that number.
+    
+    function numberOfPrimes(N)
+       {
+        let count = 0;
+        for(var i=2;i<=N;i++){
+              var flag = false; 
+              for(var j=2;j<i;j++){
+                  if(i%j==0){
+                      flag = true;
+                      break;
+                  }
+              }
+              if(!flag){
+                 count++;
+              }
+
+        }
+
+        return count;
+         
+       }
+    console.log(numberOfPrimes(10));
+</script>

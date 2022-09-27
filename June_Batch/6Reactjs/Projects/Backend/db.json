@@ -1,0 +1,96 @@
+{
+  "product": [
+    {
+      "title": "language",
+      "amount": 5000,
+      "duration": "7",
+      "id": 2
+    },
+    {
+      "title": "css",
+      "amount": 3000,
+      "duration": 2,
+      "id": 4
+    },
+    {
+      "title": "3",
+      "amount": "3",
+      "duration": "3",
+      "id": 5
+    },
+    {
+      "title": "Duration",
+      "amount": "3000",
+      "duration": "1",
+      "id": 6
+    },
+    {
+      "title": "Duration",
+      "amount": "3000",
+      "duration": "1",
+      "id": 7
+    },
+    {
+      "title": "ramesh",
+      "amount": "2000",
+      "duration": "5",
+      "id": 8
+    },
+    {
+      "title": "details",
+      "amount": "2000",
+      "duration": "34",
+      "id": 9
+    },
+    {
+      "title": "newton",
+      "amount": "200",
+      "duration": "4",
+      "id": 10
+    },
+    {
+      "title": "rock",
+      "amount": "2000",
+      "duration": "222",
+      "id": 11
+    }
+  ],
+  "registration": [
+    {
+      "id": 1,
+      "fullName": "akash",
+      "age": 23,
+      "subject": "maths",
+      "address": "bangalore"
+    },
+    {
+      "fullName": "rakesh",
+      "age": 23,
+      "subject": "commerce",
+      "address": "delhi",
+      "id": 2
+    }
+  ],
+  "classtable": [
+    {
+      "id": 1,
+      "product": "mobile",
+      "amount": 3000
+    },
+    {
+      "id": 2,
+      "product": "van",
+      "amount": 6000
+    },
+    {
+      "product": "cycle",
+      "amount": "2000",
+      "id": 3
+    },
+    {
+      "product": "htc",
+      "amount": "100",
+      "id": 4
+    }
+  ]
+}

@@ -1,0 +1,49 @@
+<script>
+    // https://my.newtonschool.co/playground/markup/5gye6jb6wevg/
+</script>
+<html>
+  <head>
+
+  </head>
+  <body>
+    <img id="image">
+    <h3 id="fullName"></h3>
+    <h1 id="additional-info"></h1>
+    <button onClick="onAgeHandler()" data-attr="age">age</button>
+    <button onClick="onEmailHandler()" data-attr="email">email</button>
+    <button onClick="onPhoneHandler()" data-attr="phone">phone</button>
+    <button onClick="getUser()" id="getUser">getuser</button>
+
+    <script>
+
+     let email,phone,age,fullName;
+      async function initialLoad(){
+        let list = await fetch('https://randomuser.me/api/');
+        let load = await list.json();
+        console.log(load.results[0]);
+        email = load.results[0].email;
+        phone = load.results[0].phone;
+        age = load.results[0].dob.age;
+        fullName =  fullName = `${load.results[0].name.first} ${load.results[0].name.last}`;
+        document.querySelector("#fullName").innerText = fullName;
+        document.querySelector("#image").src = load.results[0].picture.large;
+      }
+      initialLoad();
+
+      function onAgeHandler(){
+         document.querySelector("#additional-info").innerText = age;
+      }
+      function onEmailHandler(){
+        document.querySelector("#additional-info").innerText = email;
+      }
+      function onPhoneHandler(){
+        document.querySelector("#additional-info").innerText = phone;
+      }
+
+      function getUser(){
+        document.querySelector("#additional-info").innerHTML="";
+        initialLoad();
+      }
+    </script>
+  </body>
+</html>

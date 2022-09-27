@@ -1,0 +1,40 @@
+<script>
+    // https://my.newtonschool.co/playground/code/t567db6fj5gy/
+
+    // Problem Statement
+    // You are given an array Arr of N integers. A subarray is good if the sum of elements of that subarray is greater than or equal to K.
+    //  Print the length of good subarray of minimum length.
+
+    // Returns length of smallest subarray with sum greater than x.
+    // If there is no subarray with given sum, then returns n+1
+
+    function subArray(arr, n, x) {
+
+        let currSum = 0;
+        let min_length = n;
+        for (let i = 0; i < n; i++) {
+
+            currSum = arr[i];
+
+            if (currSum > x) {
+                return 1;
+            }
+
+            for (let j = i + 1; j < n; j++) {
+
+                currSum += arr[j];
+
+                if (currSum >= x && (j - i) < min_length) {
+                    min_length = j - i;
+                }
+
+            }
+
+        }
+
+        return min_length + 1;
+
+
+    }
+    console.log(subArray([2, 3, 2, 5, 2, 4, 2, 5, 2, 5], 9, 15));
+</script>
